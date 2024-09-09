@@ -1,0 +1,32 @@
+<!-- Սահմանել 3 պարամետրանի ֆունկցիա, որը ստուգում է այդ պարամետրերի ուղղանկյուն եռանկյան կողմեր լինելու պայմանը և տպում այո կամ ոչ: -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 4</title>
+    </head>
+    <body>
+        <script>
+            function is_valid(a, b, c){
+                return a>0 && b>0 && c>0;
+            }
+            function pythagor(a, b, c){
+                return a*a + b*b == c*c;
+            }
+
+            function is_right_tri(a, b, c){
+                if(is_valid(a, b, c)){
+                    if(pythagor(a,b,c) || pythagor(a,c,b) || pythagor(b,c,a)){
+                        alert("Yes");
+                        return;
+                    }
+                    alert('No');
+                }
+                else{
+                    alert('Invalid input');
+                }
+            }
+
+            is_right_tri(3,4,5);
+        </script>
+    </body>
+</html>

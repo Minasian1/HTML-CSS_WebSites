@@ -1,0 +1,34 @@
+<!-- Գրել մի ֆունկցիա, որը տրված նախադասության բոլոր բառերը կդասավորի հակառակ հերթականությամբ,
+    բոլոր բառերի տառերը կդասավորի հակառակ հերթականությամբ, կկտրի վերջին տառերը և բոլորի 2-րդ տառը
+    կփոխի “JS”: Ֆունկցիան պետք է վերադարձնի տող: -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 1</title>
+    </head>
+    <body>
+        <script>
+            let long_text = 'Գրել մի ֆունկցիա, որը տրված նախադասության բոլոր բառերը';
+                
+            function edit_word(word){
+                let arr = word.split('').reverse();
+                arr.pop();
+                arr[1] = 'JS';
+                return arr.join('');
+            }
+            function edit_text(txt){
+                let lst = txt.replace(',', '').split(' ');
+                let len = lst.length;
+            
+                for(let i = 0;i<len;i++){
+                    lst[i] = edit_word(lst[i]);
+                }
+
+                lst = lst.reverse().join(' ');
+                return lst;
+            }
+
+            alert(edit_text(long_text));
+        </script>
+    </body>
+</html>

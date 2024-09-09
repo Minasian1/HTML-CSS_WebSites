@@ -1,0 +1,31 @@
+<!-- Պատրաստել հաշվիչ
+(input1, select(+,-,*,/), input2, button(=), input_result) -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 2</title>
+    </head>
+    <body>
+        <input type="number" id="input1">
+        <select id="act" >
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="/">/</option>
+            <option value="*">*</option>
+        </select>
+        <input type="number" id="input2">
+        <button id="submit" onclick="calculate()">=</button>
+        <span id="result"></span>
+        <script>
+            function calculate(){
+                let num1 = document.getElementById('input1').value;
+                let num2 = document.getElementById('input2').value;
+                let action = document.getElementById('act').value;
+                result = eval(num1 + action + num2);
+
+                document.getElementById('result').innerHTML = result;
+            }
+            
+        </script>
+    </body>
+</html>

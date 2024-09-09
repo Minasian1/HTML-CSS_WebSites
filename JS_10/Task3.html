@@ -1,0 +1,65 @@
+<!-- 3 tabs -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 3</title>
+    </head>
+    <style>
+        .main{
+            width: 500px;
+            margin:auto;
+        }
+        #city_list{
+            list-style-type: none;
+            background-color: aquamarine;
+            display: flex;
+        }
+        #city_list li{
+            padding: 16px;
+        }
+    </style>
+    <body>
+        <div class="main">
+            <div>
+                <ul id="city_list">
+
+                </ul>
+            </div>
+            <div id="city_info">
+                <h1>London</h1>
+                <p>London is the capital city of England</p>
+            </div>
+        </div>
+        <script>
+            const cities_list = document.getElementById('city_list');
+            const city_info = document.getElementById('city_info');
+            const city_h1 = city_info.getElementsByTagName('h1')[0];
+            const city_p = city_info.getElementsByTagName('p')[0];
+
+            let cities = [
+                {
+                    city: 'London',
+                    country: 'England'
+                },
+                {
+                    city: 'Paris',
+                    country: 'France'
+                },
+                {
+                    city: 'Tokyo',
+                    country: 'Japan'
+                }
+            ]
+
+            for(const obj of cities){
+                li_tag = document.createElement('li');
+                li_tag.innerText = obj.city;
+                li_tag.onclick = function(){
+                    city_h1.innerText = obj.city;
+                    city_p.innerText = obj.city + ' is the capital city of ' + obj.country;
+                }
+                cities_list.appendChild(li_tag);
+            }
+        </script>
+    </body>
+</html>

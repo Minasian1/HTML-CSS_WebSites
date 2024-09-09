@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Task 4</title>
+    </head>
+    <body>
+        <input type="number" id="R">
+        <button onclick="calc()">Calculate</button>
+
+        <script>
+            let R = document
+            function sq(R){
+                return Math.PI*R**2;
+            }
+            function calc(){
+                r=document.getElementById('R').value;
+                alert(sq(r).toFixed(2))
+            }
+        </script>
+    </body>
+</html>

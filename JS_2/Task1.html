@@ -1,0 +1,22 @@
+<!-- Եթե նախօրոք տրված փոփոխականը փոքր է 18 ից, ապա alert լինի `"Դուք անչափահաս եք " ,
+     եթե ոչ, ապա գրվի " Դուք հաջողությամբ մուտք գործեցիք " և տպվի կամայական նկար: -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 1</title>
+    </head>
+    <body>
+        <div id="div_img"></div>
+        <script>
+            function create_img(){
+                let image = `<img src="p1.jpg">`;
+                document.getElementById('div_img').innerHTML = image;
+            }
+            let age = 45;
+
+            text = (age < 18) ? "Դուք անչափահաս եք" : "Դուք հաջողությամբ մուտք գործեցիք";
+            alert(text);
+            if (age>=18) create_img();
+        </script>
+    </body>
+</html>

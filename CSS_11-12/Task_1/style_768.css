@@ -1,0 +1,9 @@
+.menu_trigger{
+    visibility: visible;
+}
+.menu{
+    display: none !important;
+}
+.menu a{
+    padding: 10px;
+}

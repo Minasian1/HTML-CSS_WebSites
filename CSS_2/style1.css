@@ -1,0 +1,74 @@
+#main{
+    width: 100%;
+    background-image: url("images_1/02.jpg");
+    background-size:cover;
+}
+#container{
+    width: 955px;
+    margin:auto;
+    color: #950169;
+}
+.head_top{
+    height: 250px;
+    padding-right: 15px;
+    background-image: url("images_1/03.jpg");
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #30013c;
+}
+.head_menu{
+    background-color: #37210c;
+}
+.head_menu ul, .foot_menu ul{
+    padding: 0%;
+    margin: 30px 0px 30px 0px;
+    display: flex;
+    list-style-type: none;
+}
+.head_menu button{
+    border-color: white;
+    border-width: 0px 1px 0px 0px;
+    background-color: #37210c;
+    color: white;
+    padding: 15px;
+    font-size: 16px;
+}
+.simple_day{
+    text-indent: 40px;
+    text-align: justify;
+    background-color: white;
+    padding: 15px;
+}
+.simple_day h1{
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 7px 0px 5px #950169;
+}
+.under{
+    text-decoration: underline;
+    opacity: 50%;
+    text-align: right;
+}
+.happy{
+    text-align: center;
+    display: flex;
+}
+.happy_day, .happy_life{
+    width: 50%;
+    padding: 15px;
+}
+.happy p{
+    color: blue
+}
+.foot_menu{
+    text-align: right;
+}
+.foot_menu  ul{
+    text-decoration: underline;
+    height: 50px;
+    justify-content: right;    
+}
+.foot_menu li{
+    margin-right: 15px;
+}

@@ -1,0 +1,57 @@
+<!-- Հոբիների ցանկ -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 6</title>
+    </head>
+    <body>
+        <button onclick="upd_items_mask()" id="add">+</button>
+        <p>Hobineri cank</p>
+        <ul id="lst">
+
+        </ul>
+        <script>
+            var list = document.getElementById('lst');
+            var items_mask = [];
+
+            function update_list(){
+                list.innerHTML = '';
+                for(let i=0;i<items_mask.length;i++){
+                    if(items_mask[i]){
+                        create_item(i);
+                    }
+                }
+            }
+
+            function create_item(item_id){
+                let close_button = document.createElement('button');
+                close_button.innerText = 'X';
+                close_button.setAttribute('parrent_id', String(item_id));
+                close_button.setAttribute('onclick', 'del_item(this)');
+                let inp_tag = document.createElement('input');
+                inp_tag.style.margin = '12px';
+                let div_tag = document.createElement('div');
+                div_tag.innerText = item_id;
+                div_tag.appendChild(inp_tag);
+                div_tag.appendChild(close_button);
+                let li_tag = document.createElement('li');
+                li_tag.appendChild(div_tag);
+
+                list.appendChild(li_tag);
+            }
+
+            function upd_items_mask(){
+                items_mask.push(1);
+                update_list();
+            }
+           
+            function del_item(btn_tag){
+                let item_id = btn_tag.getAttribute('parrent_id');
+                items_mask[item_id] = 0;
+                update_list();
+            }
+
+            
+        </script>
+    </body>
+</html>

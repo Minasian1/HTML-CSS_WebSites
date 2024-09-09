@@ -1,0 +1,80 @@
+<!-- Ունենք երկու կոճակ և մի div,որի մեջ կա տեքստ: Առաջին կոճակի վրա սեղմած պահելիս
+    տեքստը աստիճանաբար իջնի,բայց երևա միայն div-ի սահմաններում:Երկրորդ կոճակի դեպքում բարձրանա: _scroll -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 2</title>
+    </head>
+    <style>
+        #main{
+            width: 500px;
+            margin: auto;
+            display: flex;
+        }
+
+        #text_block{
+            border: 2px solid blue;
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+        #text{
+            word-wrap: break-word;
+            position: absolute;
+            top: 0; /* setInterval-ով ավելացնելու*/
+        }
+
+        #buttons{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    </style>
+    <body>
+        <div id="main">
+            <div id="text_block">
+                <div id="text">
+                    
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur perferendis aliquid corporis, facere molestias harum ullam nesciunt accusamus, quis esse quia iusto veritatis nostrum? Nulla quisquam molestias tempore inventore omnis?
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium mollitia earum quibusdam nobis aperiam, eius ducimus quaerat dolore expedita non saepe quos, consequuntur voluptatem architecto neque pariatur at quidem molestiae?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus perferendis sed animi consequatur voluptatem? Vel quod fugit at autem fuga id nam, recusandae, ipsa, quos deleniti consequuntur? Iusto, quasi quod.
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo iste repudiandae adipisci debitis possimus consectetur. Sunt fugiat, temporibus quasi labore beatae ab quia natus, sed consequuntur pariatur voluptas saepe. Minima?
+            
+                </div>
+            </div>
+            <div id = 'buttons'>
+                <button>Up</button>
+                <button>Down</button>
+            </div>
+        </div>
+        <script>
+            const btn_up = document.getElementsByTagName('button')[0];
+            const btn_down = document.getElementsByTagName('button')[1];
+            const txt = document.getElementById('text');
+
+            function scroll(){
+                console.log(txt.style.top);
+                txt.style.top = String(parseInt(txt.style.top, 10) + 10) + 'px';
+                console.log(txt.style.top);
+            }
+
+        let up_flag = false, down_flag = false, up;
+
+        btn_up.addEventListener('mousedown', () => { ////// արժի?
+            up = setInterval(() => {
+                console.log(txt.style.top); 
+        }, 10);
+        });
+// 
+        btn_up.addEventListener('mouseup', () => {
+            clearInterval(up); ///// կաշխատի?
+        });
+
+
+
+
+        
+        </script>
+    </body>
+</html>

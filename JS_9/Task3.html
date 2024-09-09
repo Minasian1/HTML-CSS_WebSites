@@ -1,0 +1,50 @@
+<!-- Ունենք 10 իրարից տարբեր տողեր(p) և մեկ կոճակ, որի վրա սեղմելիս տողերից կամայականի տեքստի գույնը կփոխվի կարմիր: -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 3</title>
+    </head>
+    <body>
+        <div class="main">
+            <button onclick="rand_fill()">Fill red</button>
+            <script>
+                const p_count = 10;
+    
+                function create_p(){
+                    let main_element = document.getElementsByClassName('main')[0];
+                    let p_tag = document.createElement('p');
+                    p_tag.innerHTML = '000';
+                    
+                    main_element.appendChild(p_tag);
+                }
+    
+                for(let _=0;_<p_count;_++){
+                        create_p();
+                }
+            </script>
+        </div>
+        <script>
+            var index_prev_colored = 0;
+            function rand_int(a, b){
+                generated_num = a + Math.random() * (b-a);
+                return Math.round(generated_num);
+            }
+            function rand_fill(){
+                let tags_to_fill = document.getElementsByTagName('p');
+                let index_to_fill = rand_int(0, p_count-1);
+
+                
+                tags_to_fill[index_prev_colored].style.color = 'initial';
+                tags_to_fill[index_to_fill].style.color = 'red';
+
+                index_prev_colored = index_to_fill;
+                
+                // for(let i=0;i<p_count-1;i++){    // Տարբերակ 2
+                //     tags_to_fill[i].style.color = i==index_to_fill ? 'red' : 'initial';
+                // }
+            }
+
+
+        </script>
+    </body>
+</html>

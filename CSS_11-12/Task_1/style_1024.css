@@ -1,0 +1,80 @@
+.header{
+    padding: 0 32px;
+}
+.menu a{
+    padding: 24px;
+}
+.advantages{
+    padding: 18px;
+    display: flex;
+    gap: 16px;
+    margin: 16px 0;
+}
+.advantages div{
+    padding: 0px;
+}
+.advantages span{
+    font-size: 40px;
+    display: inline-block;
+    margin: 16px 0;
+}
+.advantages h2{
+    font-size: 16px;
+}
+.advantages p{
+    font-size: 10px;
+    letter-spacing: 0px;
+}
+.works>div{
+    width: calc((100% - 128px)/2);
+}
+
+.statistics{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.services>div{
+    flex-direction: column;
+}
+.service{
+    width: initial;
+}
+
+.testimonials > div{
+    flex-direction: column;
+}
+.card{
+    width: initial;
+}
+
+.blog_items>div{
+    width: initial;
+}
+.blog_items img{
+    height: auto;
+    width: 100%;
+}
+
+
+.footer table{
+    border-spacing: 16px 16px;
+}
+.bottom_content{
+    padding: 0 32px;
+    margin: auto;
+}
+.bottom_content p{
+    line-height: initial;
+    font-size: 12px;
+}
+.bottom_content li{
+    padding: 16px 0;
+    font-size: 12px;
+}
+td.photos img{
+    max-width: 30%;
+}

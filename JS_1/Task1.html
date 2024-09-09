@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Task 1</title>
+        <style>
+            button{
+                width: 100px;
+                height: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="div1"></div>
+        <button onclick="create_img()">Click Me!!</button>
+        <script>
+            car = {
+                model: 'mercedes',
+                weight: 1600
+            }
+            car.height = 2;
+            console.log(car.width);//11
+            function create_img(){
+                let img_tag = `<img src="p1.jpg">`;
+                const open_div = '<div>';
+                const close_div = '</div>';
+
+                document.getElementsByTagName('body')[0].innerHTML += open_div + img_tag + close_div
+            }
+        </script>
+    </body>
+</html>

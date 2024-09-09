@@ -1,0 +1,84 @@
+<!-- tic tac toe -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 4</title>
+    </head>
+    <style>
+        td{
+            width: 50px;
+            height: 50px;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+    <body>
+        <table id="grid", border="10px solid black">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <script>
+            // 0 1 2
+            // 3 4 5
+            // 6 7 8
+            const combs = [
+                [0, 1, 2],
+                [3, 4, 5],
+                [6, 7, 8],
+                [0, 3, 6],
+                [1, 4, 7],
+                [2, 5, 8],
+                [0, 4, 8],
+                [2, 4, 6]
+            ];
+            const grid = document.getElementById('grid');
+            let cells = grid.getElementsByTagName('td');
+
+            let user_flag = true;
+            for(let i=0; i<cells.length; i++){
+                let cell = cells[i];
+                cell.onclick = function(){
+                    if (!cell.innerText && user_flag){
+                        cell.innerText = 'X';
+                        user_flag = false;
+                        check_and_play();
+                    }
+                }
+            }
+
+            function check_and_play(score = 0){
+                let free_cells = get_free_cells();
+                if (free_cells == []) return score;
+
+                for(let index of free_cells){
+                    
+                }
+
+
+            }
+
+            function get_free_cells(){
+                let free_cells = [];
+                for(let i=0; i<cells.length; i++){
+                    let val = cells[i].innerText;
+                    if (!val) free_cells.push(i);
+                }
+                return free_cells;
+            }
+
+        </script>
+    </body>
+</html>

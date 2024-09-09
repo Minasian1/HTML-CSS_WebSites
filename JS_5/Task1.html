@@ -1,0 +1,19 @@
+<!-- Ունենք div,որի մեջ կա ինչ-որ տեքստ: 
+   Գրել կոդ, որ վրան պահելիս,վրայից 
+    հանելիս, սեղմած ժամանակ և թողնելիս փոխվեն և տեքստը և գույնը:
+ -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 1</title>
+    </head>
+    <body>
+        <div onmouseover="change(this, 'red', 'Mouse on me!')" onmouseleave="change(this, 'green', 'Leaved')" onmousedown="change(this, 'blue', 'Clicked')" onmouseup = "change(this, 'black', 'Bla bla bla')">bla bla bla</div>
+        <script>
+            function change(elem, color, text){
+                elem.style.color = color;
+                elem.innerHTML = text;
+            }
+        </script>
+    </body>
+</html>

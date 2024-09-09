@@ -1,0 +1,26 @@
+<!-- Բառերից կազմված զանգվածից ստանալ նախադասություն, որը չպարունակի “d”, “k” կամ “o” տառերը պարունակող բառերը: -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 3</title>
+    </head>
+    <body>
+        <script>
+            let fruits = ["apple", "banana", "orange", "grape", "pear"]
+            function filter(lst){
+                n = lst.length;
+                var result = [];
+                for(let i=0;i<n;i++){
+                    let word = lst[i];
+                    if (word.includes('d') || word.includes('k') || word.includes('o')){
+                        continue;
+                    }
+                    result.push(word);
+                }
+                return result;
+            }
+            fruits = filter(fruits).join(' ');
+            alert(fruits);
+        </script>
+    </body>
+</html>

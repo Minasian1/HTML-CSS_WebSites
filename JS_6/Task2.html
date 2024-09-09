@@ -1,0 +1,22 @@
+<!-- Գրել երեք փոփոխականի ֆունկցիա, որը հաշվում է առաջինից մեծ և երկրորդից
+    փոքր բոլոր թվերի քառակուսիների գումարը, որոնք չեն բաժանվում երրորդի վրա: -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 2</title>
+    </head>
+    <body>
+        <script>
+            function calc(a, b, c){
+                let sum = 0;
+                for(let num = a; num<b;num++){
+                    if(num%c == 0) continue;
+                    sum+=num;
+                }
+                
+                return sum;
+            }
+            alert(calc(10, 16, 2));
+        </script>
+    </body>
+</html>

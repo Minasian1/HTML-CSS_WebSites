@@ -1,0 +1,148 @@
+<!-- Վերևից ընկնում են պատահական թվեր 1-100:
+    Էն թվերը որոնք բաժանվում են 3-ի ստեղնաշարի աջ սլաքով թիվը տանել աջ, հակառակ դեպքում ձախ:
+    Արագությունը մեծանա երկու րոպեն մեկ:
+    Խաղացողն ունի 3 կյանք: -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PLay!</title>
+        <style>
+            .main{
+                width: 500px;
+                height: 500px;
+                margin: auto;
+                background-image: url('slide_img_2.jpg');
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                position: relative;
+            }
+            #generation_area{
+                background-color: rgba(118, 73, 221, 0.5);
+            }
+            #validation_area{
+                height: 150px;
+                background-color: rgba(228, 68, 68, 0.5);
+            }
+            #num{
+                align-self: center;
+                font-size: 50px;
+                color: white;
+                position: absolute;
+            }
+            #life_speed{
+                padding: 8px;
+                right: 0;
+                color: white;
+                font-size: 24px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <!-- <div id="num">0</div> -->
+            <div id="generation_area">
+
+
+                <div id="life_speed">
+                    <div id="lifes"></div>
+                    <div id="speed"></div>
+                </div>
+            
+            </div>
+            <div id="validation_area">
+
+            </div>
+        </div>
+        <button id ='start_btn' onclick="start(from_button=true)">Start</button>
+        <script>
+            const max_n = 100, condition = 2, game_height = 500, check_area_height = 150, num_height = 50;
+            var main_div = document.getElementsByClassName('main')[0];
+            var num_tag, current_number_is_valid, falling;
+            var lifes = 3, speed = 8;
+
+
+            let a = 2, game_started = false;
+            let speed_up = setInterval(speed_up_func, 10000);
+            function speed_up_func() {speed+= a*game_started}
+
+
+
+            function start(from_button = false){
+                if (from_button) game_started = !game_started;
+                else game_started = Boolean(lifes)
+                let lifes_tag = document.getElementById('lifes');
+                    lifes_tag.innerHTML = 'lifes: '+lifes;
+                let speed_tag = document.getElementById('speed');
+                    speed_tag.innerHTML = 'speed: '+speed;
+                if(game_started){
+                    start_btn.style.display = 'none';
+                    falling_number();
+                }
+                else{
+                    start_btn.style.display = 'initial';
+                    lifes = 3;
+                    speed = 8;
+                }
+            }
+
+            function falling_number(){
+                //generate and handle one number
+                var current_number = create_num();
+                num_tag.innerText = current_number.value;
+                falling = setInterval(function() {
+                    if (current_number.distance > (game_height)) {
+                        document.getElementById('validation_area').style.backgroundColor = 'rgba(228, 68, 68, 0.5)';
+                        round_result(false);
+                    } 
+                    else if (current_number.distance > (game_height - check_area_height - num_height)) {
+                        let area = document.getElementById('validation_area');
+                        area.style.backgroundColor = 'green';
+                        
+                        document.addEventListener("keydown", area_key_down);
+                    }
+                    current_number.go();
+                    },30);
+            }
+
+            function create_num(){
+                num_tag = document.createElement('div');
+                num_tag.id = 'num';
+                main_div.appendChild(num_tag)
+
+
+                let generated_num = Math.random() * max_n;
+                generated_num =  Math.floor(generated_num)+1;
+                let num_obj ={
+                    value: generated_num,
+                    distance: 0,
+                    go(){
+                        num_obj.distance += speed;
+                        console.log(num_obj.distance);
+                        num_tag.style.top = String(num_obj.distance) + 'px';
+                    }
+                } 
+                current_number_is_valid = !(num_obj.value%condition);
+                return num_obj;
+            }
+
+            function area_key_down(event){
+                let key = event.key;
+                if (['ArrowLeft', 'ArrowRight'].indexOf(key)>=0){
+                    let user_result = key == 'ArrowRight';
+                    round_result(current_number_is_valid == user_result);
+                }
+            }
+
+            function round_result(result){
+                document.getElementById('validation_area').style.backgroundColor = 'rgba(228, 68, 68, 0.5)';
+                clearInterval(falling);
+                main_div.removeChild(num_tag);
+                document.removeEventListener("keydown", area_key_down);
+                lifes -= !result;
+                start();
+            }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+.main{
+    width: 700px;
+    margin: auto;
+}
+img{
+    width: 150px;
+    height: 150px;
+}
+
+#game{
+    height: 700px;
+    background-color: chocolate;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}

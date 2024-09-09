@@ -1,0 +1,58 @@
+<!-- Ունենք կանաչ  Div և կոճակ։Կոճակի վրա առաջին անգամ սեղմելիս այն պետք է
+     դառնա կլոր և կարմիր, երկրորդ անգամ սեղմելիս դառնա եռանկյուն և կապույտ, 
+     երրորդ անգամ սեղմելիս դարձյալ քառակուսի և կանաչ։ -->
+<html>
+    <head>
+        <title>Task 3</title>
+    </head>
+    <style>
+        #my_div{
+            display: inline-block;
+            border: 100px solid green;
+        }
+    </style>
+    <body>
+        <div id="my_div">
+        </div>
+        <button onclick="edit()">Click me!!!!</button>
+        <script>
+            let status = [
+                {
+                    color: 'green',
+                    shape: 'square'
+                },
+                {
+                    color: 'red',
+                    shape: 'circle'
+                },
+                {
+                    color: 'blue',
+                    shape: 'triangle'
+                }
+            ]
+            status_i = 0;
+
+            function edit(){
+                status_i = status_i==status.length-1 ? 0 : status_i+1;
+                elem = document.getElementById('my_div');
+                elem.style.borderColor=status[status_i].color;
+                switch (status[status_i].shape){
+                    case 'square':
+                        elem.style.borderRadius = 0;
+                        break;
+                    case 'circle':
+                        elem.style.borderRadius = '50%';
+                        break;
+                    case 'triangle':
+                        elem.style.borderRadius = 0;
+                        elem.style.borderTop = '0px';
+                        elem.style.borderLeft = '100px solid';
+                        elem.style.borderRight = '100px solid';
+                        elem.style.borderBottom = '200px solid '+status[status_i].color;
+                        
+                }
+            }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,303 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #616161;
+    text-decoration: none;
+    list-style-type: none;
+}
+.main{
+    width: 1400px;
+    margin:auto;
+}
+.content_head{
+    transition: .3s;
+    opacity: .7;
+    height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    background-size: cover;
+    background-position-y: -280px;
+}
+.content_head span{
+    font-size: 32px;
+    letter-spacing: 8px;
+    position: sticky;
+    top: 0;
+}
+.main .content_head:hover{
+    opacity: 1;
+}
+.white, .white *{
+    color: white;
+}
+
+.header{
+    background-image: url("images/parallax1.jpg");
+    position: relative;
+}
+.head_line{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+ul.head_menu{
+   display: flex;
+   gap: 24px;
+}
+.head_line i:hover{
+    color: black;
+ }
+ .head_search input{
+    vertical-align: top;
+    text-align: left;
+    border: none;
+    width: 0;
+    transition: .3s;
+ }
+.head_search:hover input,  .head_search input:focus-visible{
+    width: 100px;
+    padding: 5px;
+ }
+.header_logo{
+    background-color: black;
+    padding: 12px 16px;
+}
+
+.content{
+    padding: 100px 150px;
+}
+h1{
+    text-transform: uppercase;
+    font-weight: 400;
+}
+em{
+    display: block;
+    margin: 24px 0;
+    line-height: 32px;
+}
+p{
+    line-height: 32px;
+}
+.info_bottom img{
+    opacity: 0.7;
+    margin: 68px 68px 0 0;
+}
+.info_bottom{
+    margin: 52px 0;
+    display: flex;
+}
+#info_bottom_left{
+    padding: 16px;
+}
+h4{
+    font-weight: 400;
+    margin-bottom: 52px;
+}
+.skill_name, .percent, .skill_name i{
+    transition: 0.3s;
+}
+.statistics li:hover .skill_name{
+    cursor: default;
+    letter-spacing: 16px;
+}
+.statistics li:hover .percent{
+    font-size: large;
+    background-color: #313131;
+}
+.statistics li:hover i{
+    transform: scale(1.3);
+}
+.skill_name, .level, p, .contact_methods *{
+    text-align: left;
+}
+.skill_name{
+    letter-spacing: 12px;
+}
+.level{
+    background-color: lightgray;
+    margin: 24px 0;
+}
+.percent{
+    background-color: #616161;
+    padding: 12px;
+    display: inline-block;
+    height: 42px;
+}
+#photo_skill{
+    width: 90%;
+}
+#web_skill{
+    width: 85%;
+}
+#photoshop_skill{
+    width: 75%;
+}
+.about_me_footer ul{
+    background-color: #616161;
+    padding: 52px;
+    display: flex;
+    justify-content: space-around;
+}
+.about_me_footer li{
+    transition: 0.3s;
+}
+.about_me_footer li:hover{
+    transform: scale(1.1);
+    cursor: default;
+}
+
+.portfolio .content_head{
+    background-image: url("images/parallax2.jpg");
+}
+.photos{
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    position: relative;
+}
+.photos div{
+    width: calc((100% - 3 * 16px) / 4);
+}
+.photos div:active{
+    background-color: #61616180;
+}
+.photos img{
+    /* width: calc((100% - 3 * 16px) / 4); */
+    width:100%;
+}
+.photos img:hover{
+    cursor: zoom-in;
+    transform: scale(1.02);
+    transition: .3;
+}
+.photos img:active{
+    cursor: zoom-out;
+    box-shadow: none;
+    border-radius: 10px;
+    position: absolute;
+    width: 50%;/*calc(50%-24px) */
+    top: 0;
+    left: 25%;
+    border: 50px solid white
+}
+button.load_more{
+    padding: 16px 32px;
+    margin: 52px;
+    border: none;
+    color: black;    transition: .3s;
+}
+button.load_more:hover{
+    background-color: gray;
+    color: lightgray;
+    cursor: pointer;
+}
+
+.contact .content_head{
+    background-image: url("images/parallax3.jpg");
+}
+
+.contact_area{
+    display: flex;
+}
+img.map{
+    width: 300px;
+}
+.contact_methods{
+    padding: 16px 32px;
+}
+.contact_methods ul i{
+    font-size: larger;
+    margin: 8px 16px 8px 0;
+}
+.contact_methods p{
+    margin: 12px 0;
+}
+.contact_methods input{
+    padding: 8px;
+    border: #61616161 1px solid;
+    margin: 6px 0;
+    width: 48%;
+}
+input.email, button.send{
+    float: right;
+}
+input.msg{
+    width: 100%;
+}
+.send{
+    padding: 8px;
+    background-color: black;
+    margin-top: 16px;
+    border: none;
+}
+.send:hover{
+    background-color: #616161;
+    cursor:pointer;
+}
+.send i{
+    transition: .3s;
+}
+.send:hover i{
+    position: relative;
+    animation-name: button_plane;
+    animation-duration: 3s;
+}
+
+@keyframes button_plane {
+    0%   {
+        top:0;
+        left:0;
+    }
+    30%{
+        color: #616161;
+        rotate: 30deg;
+        opacity: .7;
+    }
+    49%  {
+        top: -30px;
+        left: 90px;
+        rotate: 30deg;
+        opacity: 0;
+    }
+    50%  {
+        top: 40px;
+        left: -20px;
+        rotate: 0deg;
+    }
+    100% {
+        top:0;
+        left:0;
+    }
+}
+
+.footer{
+    background-color: #616161;
+    padding: 72px;
+}
+a.ttt{
+    color: #616161;
+    background-color: white;
+    padding: 16px 24px;
+    transition: .3s;
+}
+a.ttt:hover{
+    background-color: lightgray;
+}
+.icons i:hover{
+    color: lightgray
+}
+.icons{
+    margin: 48px;
+    font-size: 24px;
+}
+.footer span a{
+    text-decoration: underline;
+}

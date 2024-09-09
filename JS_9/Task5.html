@@ -1,0 +1,44 @@
+<!-- Ստեղծել կոճակ,որի վրա սեղմելիս այն կանհետանա և փոխարենը կստեղծվի նախորդ դասերի
+    ընթացքում պատրաստած հաշվիչը(աշխատող վիճակում): (createElement) -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 5</title>
+    </head>
+    <body>
+        <div id="calc">
+            <input type="number" id="input1">
+            <select id="act">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="/">/</option>
+                <option value="*">*</option>
+            </select>
+            <input type="number" id="input2">
+            <button id="submit" onclick="calculate()">=</button>
+            <span id="result"></span>
+            <script>
+                function calculate() {
+                    let num1 = document.getElementById('input1').value;
+                    let num2 = document.getElementById('input2').value;
+                    let action = document.getElementById('act').value;
+                    result = eval(num1 + action + num2);
+                
+                    document.getElementById('result').innerHTML = result;
+                }
+            </script>
+        </div>
+        <button id="open_button" onclick="open_calc()">Open</button>
+
+        <script>
+            var calc = document.getElementById('calc');
+            var btn = document.getElementById('open_button');
+            calc.style.display = 'none';
+
+            function open_calc() {
+                calc.style.display = 'initial';
+                btn.style.display = 'none';
+            }
+        </script>
+    </body>
+</html>

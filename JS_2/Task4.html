@@ -1,0 +1,21 @@
+<!-- Հաշվել տրված եռանիշ թվի թվանշանների գումարը: -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 4</title>
+    </head>
+    <body>
+        <script>
+            function digits_sum(num){
+                let sum = num%10;
+                num = (num-sum)/10;
+                sum += num%10;
+                num = (num - num%10)/10;
+                sum+=num;
+                alert(sum);
+            }
+            
+            digits_sum(124); // 7
+        </script>
+    </body>
+</html>

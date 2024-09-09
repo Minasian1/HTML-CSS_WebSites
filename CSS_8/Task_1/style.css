@@ -1,0 +1,80 @@
+/* #0586ad #333 #444 #def0f4 #222 #ec9939 */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    list-style-type: none;
+    text-transform: capitalize;
+}
+.main{
+    width: 1200px;
+    margin:auto;
+    padding: 128px 32px 24px 16px;
+    background: #0586ad;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+.card_head, .price, .options li:last-child a{
+    color: white;
+}
+.card{
+    width: calc(25%);
+}
+.card, .card *{
+    transition: .5s;
+}
+.card:hover{
+    width: 30%;
+    margin-right: 24px;
+    box-shadow: 16px 16px 8px;
+}
+.card:hover .card_head{
+    background-color: #222;
+}
+.card:hover .buy_btn, .card:hover .price{
+    background-color: #ec9939;
+}
+.card_head{
+    background-color: #333;
+    padding: 8px;
+    margin-bottom: 1px;
+    text-transform: uppercase;
+    font-weight:600;
+}
+.price{
+    height: 80px;
+    font-size: 32px;
+    background-color: #444;
+    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.per_month{
+    font-size: initial;
+    text-transform: lowercase;
+}
+.options li{
+    background-color: #def0f4;
+    padding: 16px;
+    border-bottom: 1px solid #444;
+}
+.options li:last-child{
+    border: none;
+    box-sizing: initial;
+    padding: 24px;
+}
+.buy_btn{
+    text-transform: uppercase;
+    font-weight:600;
+    background-color: #444;
+    padding: 8px 32px;
+    border-radius: 8px;
+}
+.buy_btn:hover{
+    background-color: #d17000 !important;
+}

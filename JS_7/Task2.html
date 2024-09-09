@@ -1,0 +1,22 @@
+<!-- Տպել այն պահը(date), որը կլինի այս պահից
+սկսած` 1600օր 18ժամ 24րոպե 35վայրկյան 
+հետո : -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 2</title>
+    </head>
+    <body>
+        <script>
+            let days = 1600, hours = 18, minutes = 24, seconds = 35;
+
+            let now = new Date();
+            let msec = now.getTime();
+
+            msec += (((days*24 +hours)*60 +minutes)*60 + seconds)*1000;
+
+            new_time = new Date(msec);
+            alert(new_time);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,102 @@
+<!-- tic tac toe -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 4</title>
+    </head>
+    <style>
+        td{
+            width: 50px;
+            height: 50px;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+    <body>
+        <table id="grid", border="10px solid black">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <script>
+            // 0 1 2
+            // 3 4 5
+            // 6 7 8
+            const combs = [
+                [0, 1, 2],
+                [3, 4, 5],
+                [6, 7, 8],
+                [0, 3, 6],
+                [1, 4, 7],
+                [2, 5, 8],
+                [0, 4, 8],
+                [2, 4, 6]
+            ];
+            const grid = document.getElementById('grid');
+            let cells = grid.getElementsByTagName('td');
+
+            let user_flag = true;
+            for(let i=0; i<cells.length; i++){
+                let cell = cells[i];
+                cell.onclick = function(){
+                    if (!cell.innerText && user_flag){
+                        cell.innerText = 'X';
+                        user_flag = false;
+                        check_and_play();
+                    }
+                }
+            }
+
+            function check_and_play(){
+                if(winner()){
+                    alert('You win!');
+                    return;
+                }
+                play_step();
+                if(winner(player = 'O')){
+                    alert('You Lost!');
+                    return;
+                }
+                user_flag = true;
+            }
+
+            function winner(player = 'X') {
+                for (let comb of combs) {
+                    let [i1, i2, i3] = comb;
+                    if (cells[i1].innerText == player && cells[i2].innerText == player && cells[i3].innerText == player) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            function play_step(){
+                let free_cells = [];
+                for(let i = 0; i<cells.length; i++){
+                    if (!cells[i].innerText){
+                        free_cells.push(i);
+                    }
+                }
+
+                if(free_cells.length){
+                    let index_of_step = Math.floor(Math.random()*free_cells.length);
+                    let step = free_cells[index_of_step]
+                    cells[step].innerText = 'O';
+                }
+                else alert('Draw!');
+            }
+        </script>
+    </body>
+</html>

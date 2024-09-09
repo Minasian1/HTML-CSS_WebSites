@@ -1,0 +1,32 @@
+<!-- Գրել ֆունկցիա, որը վերադարձնում է 10 սիմվոլից կազմված Random գաղտնաբառ: Սիմվոլները լինեն անգլերեն այբուբենի տառերը և 0-9 թվերը: -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 2</title>
+    </head>
+    <body>
+        <script>
+            const pass_length = 10;
+            
+            function rand_int(a, b){
+                generated_num = a + Math.random() * (b-a);
+                return Math.round(generated_num);
+            }
+
+            function generate_password(len){
+                const symbols = "abcdefghijklmnopqrstuvwxyz0123456789";
+                let sym_count = symbols.length;
+
+                let pass = '';
+                for(let _ = 0; _<len; _++){
+                    let index = rand_int(0, sym_count-1);
+                    pass += symbols[index];
+                }
+                
+                return pass;
+            }
+
+            alert(generate_password(pass_length));
+        </script>
+    </body>
+</html>

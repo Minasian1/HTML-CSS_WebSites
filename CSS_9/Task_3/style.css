@@ -1,0 +1,46 @@
+@font-face{
+    font-family: angelic;
+    src: url(Media/AngelicWar.otf);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+.back{
+    width: 1650px;
+    margin: auto;
+    padding: 100px ;
+    background-image: url("Media/01.jpg"), url("Media/02.jpg");
+    background-repeat: no-repeat;
+    background-position: 0 40%, right;
+    background-origin: border-box, content-box;
+
+}
+.main{
+    width: 1200px;
+    margin: auto;
+    background-image: url("Media/old-paper.jpg");
+    background-size: cover;
+    padding: 0 64px 64px;
+}
+h1{
+    text-align: center;
+    font-family: angelic;
+    font-size: 98px;
+}
+p::first-letter{
+    font-family: angelic;
+    font-size: 52px;
+    font-weight: 600;
+    line-height: 32px;
+}
+p{
+    columns: 2;
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 20px;
+    font-weight: 550;
+    letter-spacing: 1px;
+}

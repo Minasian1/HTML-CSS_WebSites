@@ -1,0 +1,134 @@
+/* #009688 #797675 #f1f1f1 */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    color: #797675;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.main{
+    width: 1400px;
+    margin:auto;
+}
+.colored, .data{
+    color: #009688;
+}
+.back_colored{
+    background-color: #009688;
+    color: white
+}
+h1{
+    font-weight: 550;
+}
+
+.container{
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    background-color: #f1f1f1;
+}
+.left, .work, .edu{
+    background-color: white;
+    box-shadow: 0 2px 5px 1px;
+}
+
+.avatar{
+    position: relative;
+}
+.left{
+    width: 500px;
+    height:fit-content;
+}
+.avatar h1{
+    color: black;
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+}
+.contact_list, .skills, .languages, .work, .edu{
+    padding: 0 18px;
+}
+.contact_list ul, .work-content, .edu-content{
+    padding-bottom: 18px;
+    border-bottom: 2px solid #f1f1f1;
+}
+.contact_list i{
+    font-size: 24px;
+}
+i.colored{
+    margin: 16px;
+    margin-left: 0;
+}
+.sub_head, .data, .desc{
+    margin: 24px 0
+}
+.progress_back{
+    background-color: #f1f1f1;
+    border-radius: 20px;
+    margin: 18px 0;
+}
+.progress{
+    text-align: center;
+    padding: 4px;
+    border-radius: 20px;
+}
+#ps .progress{
+    width: 90%;
+}
+#photo .progress{
+    width: 80%;
+}
+#ai .progress{
+    width: 75%;
+}
+#media .progress{
+    width: 50%;
+}
+#en .progress{
+    width: 100%;
+}
+#sp .progress{
+    width: 50%;
+}
+#ge .progress{
+    width: 25%;
+}
+.lan_list .progress{
+    height: 32px;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    gap: 18px
+}
+.right>div{
+    padding: 32px;
+}
+
+.data{
+    font-size: 20px;
+}
+.data span.back_colored{
+    padding: 4px;
+    border-radius: 5px;
+}
+.data i.colored, h1 i.colored{
+    margin-top: 0
+}
+
+.footer{
+    padding: 18px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px
+}
+.footer *{
+    color: white;
+    text-align: center;
+    transition: .3s;
+}
+.footer i:hover{
+    color: #797675;
+}

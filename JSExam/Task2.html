@@ -1,0 +1,18 @@
+<!-- Հաշվել 7-ից 156 միջակայքում ընկած զույգ թվերի գումարը՝ բացառությամբ  68,12 և 55 թվերի: -->
+<html>
+    <head>
+        <title>Task 2</title>
+    </head>
+    <body>
+        <script>
+            const not_allowed=[68, 12, 55], start=7, finish=156;
+            let sum=0;
+            // alert(cont.includes(12))
+            for(let i=start%2?start+1:start; i<=finish; i+=2){
+                if (not_allowed.includes(i)) continue;
+                sum+=i;
+            }
+            alert(sum);
+        </script>
+    </body>
+</html>

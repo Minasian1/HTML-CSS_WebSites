@@ -1,0 +1,87 @@
+<!-- 5 նկարից բաղկացած սլայդեր -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 1</title>
+        <style>
+            .buttons, #image{
+                text-align: center;
+            }
+
+            #active_index{
+                border-color: DarkOrange;
+            }
+            .img_circle{
+                margin: 8px;
+                height: 20px;
+                width: 20px;
+                display: inline-block;
+                border-radius: 50%;
+                border: 5px solid;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="slider">
+            <div id="image">
+                
+            </div>
+            <div class="buttons">
+                <button id="prev" onclick="prev()"><</button>
+                <button id="next" onclick="next()">></button>
+            </div>
+        </div>
+        <script>
+            const slide_count = 5;
+            var active_index = 1;
+            var slider_parrent = document.getElementById('image');
+            var buttons_tag = document.getElementsByClassName('buttons')[0];
+            var circle_row = buttons_tag.getElementsByClassName('img_circle');
+
+            for(let i=1;i<=slide_count;i++){
+                let index_tag = circle();
+                index_tag.innerText = i;
+                next_btn = document.getElementById('next');
+                buttons_tag.insertBefore(index_tag, next_btn);
+            }
+
+            function prev(){
+                active_index-=1;
+                if (!active_index) active_index = slide_count;
+                edit_active_img();
+            }
+            function next(){
+                active_index+=1;
+                if (active_index == 6) active_index = 1;
+                edit_active_img();
+            }
+            function to_here(tag_to_go){
+                active_index = +tag_to_go.innerText;
+                edit_active_img();
+            }
+            function circle(){
+                circle_div = document.createElement('div');
+                circle_div.setAttribute('class', 'img_circle');
+                circle_div.setAttribute('onclick', 'to_here(this)');
+                return circle_div;
+            }
+            function upd_id(){
+                for(let i=1;i<=slide_count;i++){ 
+                    index_tag = circle_row[i-1];
+                    index_tag.id = i==active_index? 'active_index':'';
+                }
+            }
+            function edit_active_img(){
+                slider_parrent.innerHTML = '';
+                let image = document.createElement('img');
+                let url = 'slide_img_'+String(active_index)+'.jpg';
+                image.setAttribute('src', url);
+                image.setAttribute('height', '500px');
+
+                slider_parrent.appendChild(image);
+                upd_id();
+            }
+            edit_active_img();
+        </script>
+    </body>
+</html>

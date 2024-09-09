@@ -1,0 +1,28 @@
+<!-- Ստուգել  5 մրգերից որն է տրված և տպել համապատասխան մրգի նկար:Եթե ոչ մեկը ընտրված չէ,տպել «Մենք այդ մրգից չունենք» : (switch) -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 1</title>
+    </head>
+    <body>
+        <div id="div_img"></div>
+        <script>
+            function create_img(name){
+                let image = '<img src="" alt="'+name+'"">';
+                document.getElementById('div_img').innerHTML = image;
+            }
+            
+            let selected_fruit = "orange";
+            let check_fruits = ["apple", "banana", "orange", "grape", "pear"]
+
+            index = check_fruits.indexOf(selected_fruit)
+            switch(index){
+                case -1:
+                    document.write("Մենք այդ մրգից չունենք")
+                    break
+                default:
+                    create_img(selected_fruit);
+            }
+        </script>
+    </body>
+</html>

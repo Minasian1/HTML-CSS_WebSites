@@ -1,0 +1,17 @@
+<!-- Գրել 3 փոփոխականի ֆունկցիա , որը ստուգում է 3 թվերը բավարարում են արդյոք եռանկյան կողմեր լինելու պայմանին: -->
+<html>
+    <head>
+        <title>Task 1</title>
+    </head>
+    <body>
+        <script>
+            function is_valid(a, b, c){
+                if (a>0 && b>0 && c>0){
+                    return (a+b>c && a+c>b && b+c>a);
+                }
+                return false;
+            }
+            alert(is_valid(4,2,3));
+        </script>
+    </body>
+</html>

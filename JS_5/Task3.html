@@ -1,0 +1,26 @@
+<!-- Ունենք երկու նկար և մեկ կոճակ: Կոճակի վրա սեղմելիս նկարները փոխվեն տեղերով (ամեն անգամ): -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 3</title>
+    </head>
+    <body>
+        <div>
+            <img src="hat.jpg" alt="" id="img1" width="200px">
+        </div>
+        <div>
+            <img src="hat2.jpg" alt="" id="img2" width="200px">
+        </div>
+        <button onclick="swap()">SWAP</button>
+        <script>
+            var img1 = document.getElementById('img1');
+            var img2 = document.getElementById('img2');
+
+            function swap(){
+                let src = img1.src;
+                img1.src = img2.src;
+                img2.src = src;
+            }
+        </script>
+    </body>
+</html>

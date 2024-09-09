@@ -1,0 +1,28 @@
+<!-- Գրել ֆունկցիա, որը վերադարձնում է կամայական գույն: (#A6B8C9) -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 4</title>
+    </head>
+    <body>
+        <h1 id="time"></h1>
+        <script>
+            function choice_symbol(txt){
+                index = Math.random()*(txt.length-1);
+                index = Math.round(index);
+                return txt[index];
+            }
+            function get_color(){
+                value = '#';
+                symbols = '0123456789ABCDEF';
+                for(let _=0;_<6;_++){
+                    value+=choice_symbol(symbols);
+                }
+                return value;
+            }
+
+            alert(get_color());
+            
+        </script>
+    </body>
+</html>

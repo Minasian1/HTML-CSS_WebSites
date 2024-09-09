@@ -1,0 +1,33 @@
+<!-- Ունենք նկար և մեկ կոճակ: Առաջին անգամ կոճակի վրա սեղմելիս նկարը պետք է անհետանա աստիճանաբար(փոքրանալով):
+    Երկրորդ անգամ  սեղմելիս հայտնվի աստիճանաբար: Եվ այդպես շարունակ: -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 1</title>
+    </head>
+    <body>
+        <div><button onclick="clicked()">Click!!!</button></div>
+        <div><img src="img1.png" alt=""></div>
+        <script>
+            const WIDTH = 200;
+            const my_image = document.getElementsByTagName('img')[0];
+            my_image.width = WIDTH;
+
+            function clicked(){
+                let not_hiden = Boolean(my_image.width);
+                if(not_hiden){
+                    var hiding = setInterval(function(){
+                            if(my_image.width) my_image.width-=10;
+                            else clearInterval(hiding);
+                        }, 50);
+                }
+                else{
+                    var returning = setInterval(function(){
+                            if(my_image.width<WIDTH) my_image.width+=10;
+                            else clearInterval(returning);
+                        }, 50);
+                }
+            }
+        </script>
+    </body>
+</html>

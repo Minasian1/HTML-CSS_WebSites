@@ -1,0 +1,23 @@
+<!-- Գրել երկու պարամետր ունեցող ֆունկցիա: Առաջին պարամետրը ընդունում է string տիպի արժեքներ,
+     իսկ երկրորդը array տիպի արժեքներ:Ֆունկցիայի միջոցով պարզել array-ը պարունակում է 
+     այդ բառը, թե ոչ և վերադարձնել այո կամ ոչ: -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 4</title>
+    </head>
+    <body>
+        <script>
+            let fruits = ["apple", "banana", "orange", "grape", "pear"]
+
+            function contains(str, arr){
+                for(let i=0;i<arr.length;i++){
+                    if(arr[i]==str) return 'այո';
+                }
+                return 'ոչ';
+            }
+
+            alert(contains('applee', fruits));
+        </script>
+    </body>
+</html>

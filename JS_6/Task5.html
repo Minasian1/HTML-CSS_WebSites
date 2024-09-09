@@ -1,0 +1,37 @@
+<!-- Ունենք երկու select: Առաջինի տարբերակներն են՝ Հայաստան,Ռուսաստան և Վրաստան, \
+    իսկ երկրորդը ունի 4 դատարկ տարբերակ: Առաջինում որևէ տարբերակ ընտրելիս, 
+    երկրորդում հայտնվեն տվյալ երկրի 4 քաղաքներ: -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 5</title>
+    </head>
+    <body>
+        <select name="" id="country" onchange="change(this)">
+            <option value="AM">Armenia</option>
+            <option value="RU">Russia</option>
+            <option value="GE">Georgia</option>
+        </select>
+        <select name="" id="city"></select>
+        <script>
+            const cities = {
+                'AM' : ['Yerevan', 'Gyumri', 'Artashat', 'Ijevan'],
+                'RU' : ['Moscow', 'St Petersburg', 'Leningrad', 'Novosibirsk'],
+                'GE' : ['Tbilisi', 'Batumi', 'Kutaisi', 'Rustavi']
+            }
+            function add_options(element, lst){
+                element.innerHTML = '';
+                n = lst.length;
+                for(let i=0;i<n;i++){
+                    element.innerHTML += "<option value='"+lst[i]+"'>"+lst[i]+"</option>"
+                }
+            }
+            function change(elem){
+                let select_tag = document.getElementById('city')
+                let val = elem.value;
+                add_options(select_tag, cities[val]);
+            }
+            add_options(document.getElementById('city'), cities.AM);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: inherit;
+    text-decoration: none;
+}
+.main{
+    margin: auto;
+    width:1200px;
+    border: 1px solid #74000e;
+    display: flex;
+    justify-content: space-around;
+    padding: 64px 32px;
+}
+.card{
+    color: white;
+    background-color: #707070;
+    /* width: 270px; */
+}
+.card_name{
+    padding: 16px 24px;
+    background-color: #74000e;
+    border-radius: 10px 10px 0 0;
+}
+.container{
+    padding: 16px;
+}
+.lorem{
+    white-space:pre-wrap;
+    letter-spacing: 0.5px;
+}
+.shop_button{
+    margin-top: 32px
+}
+.shop_button a{
+    display:inline-block;
+    padding:16px 24px;
+    background-color: #74000e;
+}
+.card, .shop_button a{
+    border-radius: 10px;
+}
+.card:hover .shop_button a{
+    background-color: #801c27;
+}
+.card:hover .shop_button a:hover{
+    background-color: #541018;
+}

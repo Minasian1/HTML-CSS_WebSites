@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Yin Yang</title>
+        <style>
+            @keyframes rtt{
+                0%{
+                    rotate: 0deg;
+
+                }
+                100%{
+                    rotate: 360deg;
+                }
+            }
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                overflow: hidden;
+            }
+            .main{
+                position: relative;
+                margin: auto;
+                border-radius: 100%;
+                width: 500px;
+                height: 500px;
+                border: 2px solid black;
+                display: flex;
+                animation: rtt 10s linear infinite;
+            }
+            .square{
+                width: 50%;
+                height: 100%;
+            }
+            .right_black{
+                background-color: black;
+            }
+            .inner_circles{
+                position:absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 50%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+            .inner_circle{
+                height: 50%;
+                width: 100%;
+                border-radius: 100%;
+            }
+            .top_black{
+                background-color: black;
+                border: 80px solid white;
+            }
+            .bottom_white{
+                background-color: white;
+                border: 80px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div class="left_white square"></div>
+            <div class="right_black square"></div>
+            <div class="inner_circles">
+                <div class="top_black inner_circle"></div>
+                <div class="bottom_white inner_circle"></div>
+            </div>
+        </div>
+    </body>
+</html>

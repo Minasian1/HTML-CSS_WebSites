@@ -1,0 +1,29 @@
+<!-- Հաշվել այս շարքի առաջին 11 անդամների գումարը՝
+1511,41022,72033,104044,138055,… -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 4</title>
+    </head>
+    <body>
+        <script>
+            const start = 1, mid = 5, end = 11;
+            const n = 11;
+            
+            function get_value(index){
+                start_ = start + index*3;
+                mid_ = mid * 2**index;
+                end_ = end + index*11;
+
+                return +(start_.toString() + mid_.toString() + end_.toString());
+            }
+
+            let sum = 0;
+            for(let i=0;i<n;i++){
+                sum += get_value(i);
+                console.log(sum);
+            }
+            alert(sum);
+        </script>
+    </body>
+</html>

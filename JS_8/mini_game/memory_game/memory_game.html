@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Memory game</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="main">
+            <div id="game">
+
+            </div>
+        </div>
+
+
+
+
+
+        <script>
+            const class_count = 8;
+            const board = document.getElementById('game');
+            const bg_img = 'images/backside.png';
+            var index_to_compare = -1;
+
+            
+            let cards = []; 
+            for(let i=0; i<class_count*2; i++){
+                let card = {
+                    value_number: i%class_count, // from 0 to 7
+                    get_url: function(){
+                        // return this.status ? 'images/img'+String(this.value_number)+'.png' : bg_img;
+                        return 'images/img'+String(this.value_number)+'.png';
+                    }
+                }
+                cards.push(card);
+            }
+            cards = shuffled(cards);
+
+            for(let i=0;i<cards.length;i++){
+                let card = cards[i];
+                create_card(i);
+            }
+
+            
+
+            function shuffled(arr){
+                let len = arr.length;
+                for(let i=0;i<len;i++){
+                    let new_ind = parseInt(Math.random()*len);
+                    let other = arr[i];
+                    arr[i] = arr[new_ind];
+                    arr[new_ind] = other;
+                }
+                return arr;
+            }
+            function sum(arr){
+                let sum=0;
+                for(let i=0;i<arr.length;i++) sum+=arr[i];
+                return sum;
+            }
+
+            function create_card(card_index){
+                let div_tag = document.createElement('div');
+                div_tag.className = 'card';
+                div_tag.onclick = function(){click_on_card(this, card_index);};
+
+                let img_tag = document.createElement('img');
+                img_tag.setAttribute('src', bg_img);
+
+                div_tag.appendChild(img_tag);
+                board.appendChild(div_tag);
+            }
+
+            function click_on_card(div_tag, card_index){
+                if (index_to_compare < 0){
+                    index_to_compare = card_index;
+                }
+                else if (index_to_compare != card_index){
+                    if (cards[index_to_compare].value_number != cards[card_index].value_number){
+                        ind1 = index_to_compare;
+                        setTimeout(function(){close_cards(ind1, card_index);}, 1000);
+                    }
+                    index_to_compare = -1;
+                }
+                open_card(card_index);
+            }
+
+            function open_card(card_index){
+                let tags = board.getElementsByClassName('card');
+                let div_tag = tags[card_index];
+                let img_tag = div_tag.getElementsByTagName('img')[0];
+                img_tag.setAttribute('src', cards[card_index].get_url())
+            }
+            function close_cards(i1, i2){
+                let tags = board.getElementsByClassName('card');
+                let img_tag_1 = tags[i1].getElementsByTagName('img')[0];
+                let img_tag_2 = tags[i2].getElementsByTagName('img')[0];
+                img_tag_1.setAttribute('src', bg_img);
+                img_tag_2.setAttribute('src', bg_img);
+            }
+        </script>
+    </body>
+</html>
